@@ -1,0 +1,4 @@
+export PATH=/home/pmr/src/liquidc/external/cil/bin:$PATH
+export EDITOR=emacsclient.emacs-snapshot
+
+alias pr="lp -d p3205-b1 -o sides=two-sided-long-edge"
