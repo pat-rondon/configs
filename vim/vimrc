@@ -1,0 +1,11 @@
+set wildmenu
+filetype on
+filetype plugin on
+syntax on
+set smarttab
+set tabstop=8
+
+set hlsearch
+set incsearch
+
+imap jj <ESC>

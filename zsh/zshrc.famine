@@ -1,0 +1,4 @@
+alias internet="sudo netcfg nethack"
+alias nointernet="sudo netcfg -a"
+alias obai="sudo shutdown -h now"
+alias lk="xscreensaver-command -lock"

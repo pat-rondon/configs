@@ -1,0 +1,75 @@
+# The following lines were added by compinstall
+
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
+bindkey "\e[5~" beginning-of-history
+bindkey "\e[6~" end-of-history
+bindkey "\e[3~" delete-char
+bindkey "\e[2~" quoted-insert
+bindkey "\e[5C" forward-word
+bindkey "\eOc" emacs-forward-word
+bindkey "\e[5D" backward-word
+bindkey "\eOd" emacs-backward-word
+bindkey "\e\e[C" forward-word
+bindkey "\e\e[D" backward-word
+bindkey "^H" backward-delete-word
+# for rxvt
+bindkey "\e[8~" end-of-line
+bindkey "\e[7~" beginning-of-line
+
+zstyle ':completion:*' completer _complete _expand
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*:expand:*' tag-order all-expansions
+zstyle :compinstall filename '/home/pmr/.zshrc'
+
+autoload -Uz compinit
+compinit
+autoload colors
+colors
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+source .zshrc.local
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+PROMPT="%{$fg[red]%}%n@%m %{$fg[white]%}%~%# "
+PATH=/home/pmr/bin:/home/pmr/src/scripts:/usr/games:$PATH
+export EDITOR="emacsclient"
+export LD_LIBRARY_PATH=/home/pmr/src/yices/lib/:/usr/local/lib/
+export BC_ENV_ARGS="-l"
+export GREP_OPTIONS="--color=auto"
+
+function md5name {
+    EXT=`echo "$1" | cut -d '.' --complement -f 1`
+    BASE=`basename "$1" "$EXT"`
+    MD5=`md5 "$1" | cut -d " " -f 1`
+    echo "$MD5.$EXT"
+}
+
+function md5rename {
+    for f in $@; do
+        mv $f `md5name $f`
+    done
+}
+
+### Directories
+alias ls="ls --color=auto"
+
+alias ..1="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+
+alias ocaml="rlwrap ocaml"
+alias gnight="sudo shutdown -h 120"
+
+function prepend () {
+  cat $1 $2 > ~/tmp/.prepend && cp ~/tmp/.prepend $2
+}
+
+function meatsync () {
+  unison "$1" "ssh://meatwad.ucsd.edu/$1"
+}
