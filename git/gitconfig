@@ -1,0 +1,25 @@
+[user]
+name  = Pat Rondon
+email = prondon@cs.ucsd.edu
+
+[alias]
+ci       = commit -a
+st       = status -a
+freebase = !git fetch ; !git rebase origin
+rbranch  = !git push origin origin:refs/heads/$1 ; git checkout --track -b $1 origin/$1
+
+[apply]
+whitespace = strip
+
+[diff]
+color   = auto
+renames = copy 
+
+[pager]
+color = true 
+
+[status]
+color = auto
+
+[push]
+default = current
