@@ -39,7 +39,7 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 PROMPT="%{$fg[red]%}%n@%m %{$fg[white]%}%~%# "
 PATH=/home/pmr/bin:/home/pmr/src/scripts:/usr/games:$PATH
-export EDITOR="emacsclient"
+export EDITOR="vim"
 export LD_LIBRARY_PATH=/home/pmr/src/yices/lib/:/usr/local/lib/
 export BC_ENV_ARGS="-l"
 export GREP_OPTIONS="--color=auto"
