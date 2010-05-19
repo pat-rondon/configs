@@ -2,4 +2,4 @@ set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 set guioptions-=T
 set guioptions-=m
 set guioptions-=L
-colors wombat
+colors xoria256
