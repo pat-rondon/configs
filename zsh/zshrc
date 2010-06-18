@@ -66,6 +66,9 @@ alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 
 alias ocaml="rlwrap ocaml"
+alias maek=make
+alias makemake=make
+
 alias gnight="sudo shutdown -h 120"
 
 function prepend () {
