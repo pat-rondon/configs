@@ -1,5 +1,6 @@
 (server-start)
 (add-to-list 'load-path "/home/pmr/.emacs.d")
+(add-to-list 'load-path "/home/pmr/.emacs.d/color-themes")
 
 (global-font-lock-mode 1)
 (show-paren-mode 1)
@@ -10,6 +11,7 @@
 
 (require 'color-theme)
 (require 'color-theme-pmr)
+(require 'color-theme-pmr-dark)
 (color-theme-pmr)
 (set-default-font "Droid Sans Mono-10")
 
