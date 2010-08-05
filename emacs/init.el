@@ -1,30 +1,17 @@
 (server-start)
+(add-to-list 'load-path "/home/pmr/.emacs.d")
 
 (global-font-lock-mode 1)
 (show-paren-mode 1)
 
-(setq default-frame-alist
-      '((foreground-color . "gray80")
-        (background-color . "gray16")
-       (font . "7x13")
-        (cursor-color . "ghost white")))
-
-(set-face-foreground 'minibuffer-prompt "white")
-(set-face-background 'minibuffer-prompt "steel blue")
-(set-face-attribute 'mode-line nil :box nil :background "grey5" :foreground "grey75")
-(set-face-attribute 'font-lock-keyword-face nil :foreground "steel blue")
-(set-face-foreground 'font-lock-comment-face "firebrick")
-(set-face-foreground 'font-lock-type-face "CadetBlue")
-(set-face-foreground 'font-lock-string-face "SeaGreen3")
-(set-face-foreground 'font-lock-variable-name-face "MediumPurple2")
-(set-face-foreground 'font-lock-constant-face "orchid2")
-(set-face-foreground 'font-lock-function-name-face "LightSkyBlue")
-(set-face-background 'region "gray28")
-(set-face-attribute 'show-paren-match nil :background "steelblue3" :foreground "white")
-
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (set-scroll-bar-mode nil)
+
+(require 'color-theme)
+(require 'color-theme-pmr)
+(color-theme-pmr)
+(set-default-font "Droid Sans Mono-10")
 
 (ido-mode t)
 (setq ido-enable-flex-matching t)
@@ -40,7 +27,6 @@
 
 (column-number-mode t)
 
-;; OMFG this makes me so happy
 (windmove-default-keybindings)
 
 (global-set-key (kbd "C-c k") 'compile)
@@ -109,17 +95,6 @@
     ))
 
 (add-hook 'TeX-mode-hook 'set-TeX-faces)
-
-(require 'emms-setup)
-(require 'emms-lastfm)
-(require 'emms-playing-time)
-(emms-standard)
-(emms-default-players)
-(emms-playing-time 1)
-(global-set-key (kbd "C-x SPC") 'emms-playlist-mode-go)
-(global-set-key (kbd "C-x p") 'emms-pause)
-(global-set-key (kbd "C-x a d") 'emms-add-dired)
-(global-set-key (kbd "C-x a f") 'emms-add-file)
 
 ;; Misc Keybindings
 (global-set-key (kbd "C-c |") 'align-regexp)
