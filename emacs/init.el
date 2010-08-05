@@ -1,4 +1,5 @@
 (server-start)
+(add-to-list 'load-path "/home/pmr/.emacs.d")
 
 (global-font-lock-mode 1)
 (show-paren-mode 1)
@@ -8,8 +9,9 @@
 (set-scroll-bar-mode nil)
 
 (require 'color-theme)
-(color-theme-vim-colors)
-(set-default-font "Droid Sans Mono-11.3")
+(require 'color-theme-pmr)
+(color-theme-pmr)
+(set-default-font "Droid Sans Mono-10")
 
 (ido-mode t)
 (setq ido-enable-flex-matching t)
