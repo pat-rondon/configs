@@ -9,7 +9,7 @@
       (foreground-color . "#ffffff")
       (mouse-color . "black"))
      (fringe ((t (:background "#454545"))))
-     (mode-line ((t (:foreground "#000000" :background "#666666"))))
+     (mode-line ((t (:foreground "#ffffff" :background "#666666"))))
      (region ((t (:background "#4a3d26"))))
      (font-lock-builtin-face ((t (:foreground "#38a9cc"))))
      (font-lock-comment-face ((t (:foreground "#e67ad6"))))
