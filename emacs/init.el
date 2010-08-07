@@ -4,6 +4,8 @@
 
 (global-font-lock-mode 1)
 (show-paren-mode 1)
+(blink-cursor-mode 0)
+(global-hl-line-mode 1)
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
