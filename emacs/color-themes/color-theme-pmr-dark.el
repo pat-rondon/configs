@@ -19,6 +19,8 @@
      (font-lock-type-face ((t (:foreground"#267ee8"))))
      (font-lock-variable-name-face ((t (:foreground "#fcfcfc"))))
      (minibuffer-prompt ((t (:foreground "#7299ff" :bold t))))
+     (show-paren-match-face ((t (:background "DarkOliveGreen"))))
+     (hl-line ((t (:background "#2f2f2f"))))
      (font-lock-warning-face ((t (:foreground "Red" :bold t))))
      )))
 (provide 'color-theme-pmr-dark)
