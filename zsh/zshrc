@@ -37,7 +37,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
-PROMPT="%{$fg[red]%}%n@%m %{$fg[white]%}%~%# "
+PROMPT="%{$fg_bold[blue]%}%n@%m %{$fg_bold[red]%}%~%# %{$fg[black]%}"
 PATH=/home/pmr/bin:/home/pmr/src/scripts:/usr/games:$PATH
 export EDITOR="vim"
 export BC_ENV_ARGS="-l"
