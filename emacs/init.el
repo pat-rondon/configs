@@ -15,7 +15,7 @@
 (require 'color-theme-pmr)
 (require 'color-theme-pmr-dark)
 (color-theme-pmr)
-(set-default-font "Droid Sans Mono-10")
+(set-default-font "DejaVu Sans Mono-10")
 
 (ido-mode t)
 (setq ido-enable-flex-matching t)
