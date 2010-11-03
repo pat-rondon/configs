@@ -2,9 +2,7 @@
   (interactive)
   (color-theme-install
    '(color-theme-pmr
-      ((background-color . "#ffffff")
-      (background-mode . light)
-      (border-color . "#d6d1d1")
+      ((border-color . "#d6d1d1")
       (cursor-color . "#333333")
       (foreground-color . "#000000")
       (mouse-color . "black"))
@@ -21,7 +19,8 @@
      (minibuffer-prompt ((t (:foreground "DeepSkyBlue4" :bold t))))
      (font-lock-warning-face ((t (:foreground "Red" :bold t))))
      (show-paren-match-face ((t (:background "LightGoldenrod1"))))
-     (hl-line ((t (:background "gray96"))))
+     (magit-item-highlight ((t (:background "gray98"))))
+     (magit-diff-add ((t (:foreground "green" :bold t))))
      (isearch ((t (:foreground "white" :background "DarkOrange1"))))
      (font-latex-sectioning-2-face ((t (:foreground "black"))))
      (font-latex-bold-face ((t (:foreground "black" :bold t))))
