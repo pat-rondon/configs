@@ -23,5 +23,7 @@
      (show-paren-match-face ((t (:background "LightGoldenrod1"))))
      (hl-line ((t (:background "gray96"))))
      (isearch ((t (:foreground "white" :background "DarkOrange1"))))
+     (font-latex-sectioning-2-face ((t (:foreground "black"))))
+     (font-latex-bold-face ((t (:foreground "black" :bold t))))
      )))
 (provide 'color-theme-pmr)
