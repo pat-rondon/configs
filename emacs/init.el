@@ -91,10 +91,10 @@
 (defun set-TeX-faces ()
   (progn
     (set-face-foreground 'font-latex-math-face "gray 90")
-    (set-face-foreground 'font-latex-italic-face "white")
-    (set-face-foreground 'font-latex-bold-face "white")
-    (set-face-foreground 'font-latex-verbatim-face "LightYellow3")
-    (set-face-foreground 'font-latex-sectioning-2-face "white")
+    (set-face-foreground 'font-latex-italic-face "black")
+    (set-face-foreground 'font-latex-bold-face "black")
+    (set-face-foreground 'font-latex-verbatim-face "black")
+    (set-face-foreground 'font-latex-sectioning-2-face "black")
     ))
 
 (add-hook 'TeX-mode-hook 'set-TeX-faces)
