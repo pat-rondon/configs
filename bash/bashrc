@@ -50,7 +50,10 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\033[0;34m\]\\u@\\h \[\033[0;31m\]\\w\[\033[0;30m\]$ "
+    BLUE="\[$(tput setf 1)\]"
+    RESET="\[$(tput sgr0)\]"
+    RED="\[$(tput setf 4)\]"
+    PS1="$BLUE\\u $RED\\h$RESET \\w$ "
 else
     PS1='\u@\h \w\$ '
 fi
@@ -97,3 +100,5 @@ fi
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+JAVA_HOME=/usr/lib/jvm/java-6-openjdk/
