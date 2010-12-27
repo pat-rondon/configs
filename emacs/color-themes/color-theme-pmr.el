@@ -22,5 +22,7 @@
      (magit-item-highlight ((t (:background "gray98"))))
      (magit-diff-add ((t (:foreground "green" :bold t))))
      (isearch ((t (:foreground "white" :background "DarkOrange1"))))
+     (font-latex-sectioning-2-face ((t (:foreground "black"))))
+     (font-latex-bold-face ((t (:foreground "black" :bold t))))
      )))
 (provide 'color-theme-pmr)
