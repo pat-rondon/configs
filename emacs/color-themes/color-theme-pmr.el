@@ -24,5 +24,6 @@
      (isearch ((t (:foreground "white" :background "DarkOrange1"))))
      (font-latex-sectioning-2-face ((t (:foreground "black"))))
      (font-latex-bold-face ((t (:foreground "black" :bold t))))
+     (tuareg-font-lock-governing-face ((t (:foreground "DeepSkyBlue4" :bold t))))
      )))
 (provide 'color-theme-pmr)
