@@ -13,8 +13,7 @@
 (require 'color-theme)
 (require 'color-theme-pmr)
 (require 'color-theme-pmr-dark)
-(color-theme-pmr)
-(set-default-font "DejaVu Sans Mono-10")
+(set-default-font "DejaVu Sans Mono-12")
 
 (ido-mode t)
 (setq ido-enable-flex-matching t)
@@ -89,13 +88,7 @@
 (setq-default TeX-parse-self t)
 
 (defun set-TeX-faces ()
-  (progn
-    (set-face-foreground 'font-latex-math-face "gray 90")
-    (set-face-foreground 'font-latex-italic-face "white")
-    (set-face-foreground 'font-latex-bold-face "white")
-    (set-face-foreground 'font-latex-verbatim-face "LightYellow3")
-    (set-face-foreground 'font-latex-sectioning-2-face "white")
-    ))
+  (color-theme-pmr))
 
 (add-hook 'TeX-mode-hook 'set-TeX-faces)
 
@@ -119,3 +112,4 @@
 (add-to-list 'Info-default-directory-list "/home/pmr/doc/info/" )
 
 (transient-mark-mode 1)
+(color-theme-pmr)
