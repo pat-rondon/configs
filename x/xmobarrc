@@ -1,0 +1,16 @@
+Config { 
+--         font = "xft:DejaVu Sans Mono-8:bold"
+         font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Top
+       , lowerOnStart = True
+       , commands = [ Run Weather "KSAN" ["-t","<skyCondition> <tempF>F","-L","50","-H","70","--normal","grey","--high","red","--low","lightblue"] 36000
+                    , Run Date "%A %B %_d %Y %H:%M" "date" 60
+                    , Run Battery ["-L","20", "--normal","grey", "--low","red"] 60
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %battery% | %KSAN% | %date%"
+       }
