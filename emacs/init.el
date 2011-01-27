@@ -5,6 +5,7 @@
 (global-font-lock-mode 1)
 (show-paren-mode 1)
 (blink-cursor-mode 0)
+(set-fringe-mode '(0 . 0))
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
@@ -110,6 +111,10 @@
 (global-set-key (kbd "C-c v") 'annotjump)
 
 (add-to-list 'Info-default-directory-list "/home/pmr/doc/info/" )
+
+(require 'emms-setup)
+(emms-standard)
+(emms-default-players)
 
 (transient-mark-mode 1)
 (color-theme-pmr)

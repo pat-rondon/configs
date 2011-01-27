@@ -14,6 +14,7 @@ import XMonad.Util.Run
 
 conf = defaultConfig
           { borderWidth        = 2
+          , modMask            = mod4Mask
           , terminal           = "urxvt"
           , layoutHook         = smartBorders $ avoidStruts $ Mirror fib ||| fib ||| Mirror tiled ||| tiled ||| Full
           , manageHook         = manageDocks <+> manageHook defaultConfig
