@@ -28,6 +28,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myPP = xmobarPP
             { ppCurrent = xmobarColor "#0088dd" "black"
+            , ppVisible = xmobarColor "red" "black"
             , ppTitle   = xmobarColor "orange" "black" . shorten 60
             , ppSep     = " "
             , ppLayout  = const ""
