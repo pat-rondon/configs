@@ -1,5 +1,5 @@
 URxvt*background: white
 URxvt*foreground: black
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=12
-URxvt*boldFont: xft:DejaVu Sans Mono:pixelsize=12
+URxvt*font: xft:DejaVu Sans Mono:size=10
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:size=10
 URxvt*scrollBar: false
