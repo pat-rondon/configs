@@ -110,7 +110,7 @@
 
 (global-set-key (kbd "C-c v") 'annotjump)
 
-(add-to-list 'Info-default-directory-list "/home/pmr/doc/info/" )
+(add-to-list 'Info-default-directory-list "/home/pmr/dynamic/info/" )
 
 (require 'emms-setup)
 (emms-standard)
