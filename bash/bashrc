@@ -101,4 +101,5 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-JAVA_HOME=/usr/lib/jvm/java-6-openjdk/
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/
+export EDITOR="emacsclient -c"
