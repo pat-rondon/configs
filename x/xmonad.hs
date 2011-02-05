@@ -1,11 +1,9 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
-import XMonad.Layout.Spacing
 import Data.Ratio
 import qualified Data.Map as M
 import XMonad.Prompt
@@ -21,13 +19,13 @@ conf = defaultConfig
           , normalBorderColor  = "#000000"
           , focusedBorderColor = "#ffa500"
           , keys               = newKeys }
- where tiled = Tall 1 (3%100) (1%2)
-       fib = spiral (1 % 1)
+ where tiled = Tall 1 (3 % 100) (1 % 2)
+       fib   = spiral (1 % 1)
 
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myPP = xmobarPP
-            { ppCurrent = xmobarColor "red" "black"
+            { ppCurrent = xmobarColor "orange" "black"
             , ppVisible = xmobarColor "#0088dd" "black"
             , ppTitle   = xmobarColor "orange" "black" . shorten 60
             , ppSep     = " "
