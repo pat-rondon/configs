@@ -25,5 +25,7 @@
      (font-latex-sectioning-2-face ((t (:foreground "black"))))
      (font-latex-bold-face ((t (:foreground "black" :bold t))))
      (tuareg-font-lock-governing-face ((t (:foreground "DeepSkyBlue4" :bold t))))
+     (w3m-anchor-face ((t (:foreground "DeepSkyBlue4" :bold t))))
+     (w3m-arrived-anchor-face ((t (:foreground "Red"))))
      )))
 (provide 'color-theme-pmr)
