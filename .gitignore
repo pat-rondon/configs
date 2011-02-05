@@ -1,0 +1,4 @@
+*~
+emacs/auto-save-list
+emacs/session.*
+*.elc
