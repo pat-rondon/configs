@@ -1,0 +1,11 @@
+Host meatwad
+     Hostname meatwad.ucsd.edu
+     ForwardX11 yes
+
+Host frylock
+     Hostname frylock.ucsd.edu
+     ForwardX11 yes
+
+Host goto
+     Hostname goto.ucsd.edu
+     ForwardX11 yes
