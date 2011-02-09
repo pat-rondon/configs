@@ -40,4 +40,10 @@ myKeys x =
            [ ((modMask x, xK_o), shellPrompt (defaultXPConfig { position = Top }))
            , ((modMask x, xK_y), spawn "emacsclient -c -a emacs")
            , ((modMask x, xK_i), spawn "google-chrome")
+           -- XF86AudioLowerVolume
+           , ((0, 0x1008ff11), spawn "aumix -v -2")
+           -- XF86AudioRaiseVolume
+           , ((0 , 0x1008ff13), spawn "aumix -v +2")
+           -- XF86AudioMute
+           , ((0 , 0x1008ff12), spawn "amixer -q set Master toggle")
            ]
