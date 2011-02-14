@@ -40,4 +40,5 @@ myKeys x =
            [ ((modMask x, xK_o), shellPrompt (defaultXPConfig { position = Top }))
            , ((modMask x, xK_y), spawn "emacsclient -c -a emacs")
            , ((modMask x, xK_i), spawn "google-chrome")
+           , ((modMask x, xK_x), spawn "xscreensaver-command -lock")
            ]
