@@ -8,3 +8,4 @@
 (load "latex-pmr")
 (load "ocaml-pmr")
 (load "w3m-pmr")
+(load "emms-pmr")

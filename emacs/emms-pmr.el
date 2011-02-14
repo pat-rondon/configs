@@ -1,3 +1,5 @@
 (require 'emms-setup)
-(emms-standard)
+(emms-all)
 (emms-default-players)
+(setq emms-source-file-default-directory "/home/pmr/music/")
+(setq emms-info-auto-update 1)
