@@ -27,5 +27,7 @@
      (tuareg-font-lock-governing-face ((t (:foreground "DeepSkyBlue4" :bold t))))
      (w3m-anchor-face ((t (:foreground "DeepSkyBlue4" :bold t))))
      (w3m-arrived-anchor-face ((t (:foreground "Red"))))
+     (emms-playlist-track-face ((t (:foreground "black"))))
+     (emms-playlist-selected-face ((t (:foreground "Red" :background "white" :bold t))))
      )))
 (provide 'color-theme-pmr)

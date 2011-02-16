@@ -25,3 +25,5 @@
 (global-set-key (kbd "C-c k") 'compile)
 (global-set-key (kbd "C-c |") 'align-regexp)
 (global-set-key (kbd "C-c v") 'annotjump)
+
+(global-set-key (kbd "C-x a d") 'emms-add-dired)
