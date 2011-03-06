@@ -9,7 +9,7 @@
 (column-number-mode t)
 (setq mode-line-format (butlast mode-line-format))
 
-(add-to-list 'load-path "/home/pmr/.emacs.d/color-themes")
+(add-to-list 'load-path "~/.emacs.d/color-themes")
 (require 'color-theme)
 (require 'color-theme-pmr)
 (require 'color-theme-pmr-dark)
