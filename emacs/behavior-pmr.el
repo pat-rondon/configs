@@ -4,6 +4,8 @@
 
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+(setq ido-ignore-files
+      '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$"))
 
 (setq-default indent-tabs-mode nil)
 
@@ -14,7 +16,7 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-(add-to-list 'Info-default-directory-list "/home/pmr/dynamic/info/" )
+(add-to-list 'Info-default-directory-list "~/dynamic/info/" )
 
 ;; Automatically byte-compile emacs-lisp files upon save
 (add-hook 'emacs-lisp-mode-hook
