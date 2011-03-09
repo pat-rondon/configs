@@ -13,6 +13,11 @@
 (require 'color-theme)
 (require 'color-theme-pmr)
 (require 'color-theme-pmr-dark)
-(set-frame-font "DejaVu Sans Mono-12")
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-12")
+(defvar pmr-frame-font)
+(if (eq system-type 'darwin)
+    (setq pmr-frame-font
+          "-apple-Menlo-medium-normal-normal-*-14-*-*-*-m-0-iso10646-1")
+    (setq pmr-frame-font "DejaVu Sans Mono-12"))
+(set-frame-font pmr-frame-font)
+(set-face-attribute 'default nil :font pmr-frame-font)
 (color-theme-pmr)
