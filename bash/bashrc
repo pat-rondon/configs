@@ -37,6 +37,7 @@ esac
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
+export CLICOLOR="true"
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -50,9 +51,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    BLUE="\[$(tput setf 1)\]"
+    BLUE="\[$(tput setaf 1)\]"
     RESET="\[$(tput sgr0)\]"
-    RED="\[$(tput setf 4)\]"
+    RED="\[$(tput setaf 4)\]"
     PS1="$BLUE\\u $RED\\h$RESET \\w$ "
 else
     PS1='\u@\h \w\$ '

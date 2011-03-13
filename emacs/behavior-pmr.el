@@ -5,7 +5,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-ignore-files
-      '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$"))
+      '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$" ".*\\.pdf$"))
 
 (setq-default indent-tabs-mode nil)
 

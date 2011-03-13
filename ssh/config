@@ -9,3 +9,7 @@ Host frylock
 Host goto
      Hostname goto.ucsd.edu
      ForwardX11 yes
+
+Host sloth
+     Hostname localhost
+     Port     2222
