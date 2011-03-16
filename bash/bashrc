@@ -104,3 +104,4 @@ fi
 
 export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/
 export EDITOR="emacsclient -c"
+export PATH=~/bin:$PATH
