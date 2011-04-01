@@ -1,0 +1,4 @@
+alias maek=make
+alias makemake=make
+alias meak=make
+alias pr="lp -d 3107b -o sides=two-sided-long-edge"
