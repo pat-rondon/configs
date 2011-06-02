@@ -10,6 +10,6 @@ Host goto
      Hostname goto.ucsd.edu
      ForwardX11 yes
 
-Host sloth
+Host limon
      Hostname localhost
      Port     2222
