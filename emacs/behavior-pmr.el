@@ -24,8 +24,11 @@
              (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
 
 (windmove-default-keybindings)
-(global-set-key (kbd "C-c k") 'compile)
-(global-set-key (kbd "C-c |") 'align-regexp)
-(global-set-key (kbd "C-c v") 'annotjump)
+(add-hook 'org-shiftup-final-hook 'windmove-up)
+(add-hook 'org-shiftleft-final-hook 'windmove-left)
+(add-hook 'org-shiftdown-final-hook 'windmove-down)
+(add-hook 'org-shiftright-final-hook 'windmove-right)
 
-(global-set-key (kbd "C-x a d") 'emms-add-dired)
+(global-set-key (kbd "C-c |") 'align-regexp)
+(global-set-key (kbd "C-c l") 'lgrep)
+(global-set-key (kbd "C-c v") 'annotjump)

@@ -1,3 +1,6 @@
+;; TODO: name colors by purpose or something
+;; TODO: group by purpose
+
 (defun color-theme-pmr ()
   (interactive)
   (color-theme-install
@@ -10,24 +13,33 @@
      (mode-line ((t (:foreground "white" :background "black"))))
      (region ((t (:background "#d6dbf0"))))
      (font-lock-builtin-face ((t (:foreground "#d04343"))))
-     (font-lock-comment-face ((t (:foreground "#44a74d"))))
+     (font-lock-comment-face ((t (:foreground "gray60"))))
      (font-lock-function-name-face ((t (:foreground "#000000"))))
-     (font-lock-keyword-face ((t (:foreground "DeepSkyBlue4" :bold t))))
-     (font-lock-string-face ((t (:foreground "#e31616"))))
-     (font-lock-type-face ((t (:foreground"#ce6122"))))
+     (font-lock-keyword-face ((t (:foreground "#990099" :bold t))))
+     (font-lock-string-face ((t (:foreground "MediumVioletRed"))))
+     (font-lock-type-face ((t (:foreground "DeepSkyBlue4"))))
      (font-lock-variable-name-face ((t (:foreground "#000000"))))
+
+     (compilation-info ((t (:foreground "seagreen"))))
+
+     (tuareg-font-lock-operator-face ((t (:foreground "SlateBlue4"))))
      (minibuffer-prompt ((t (:foreground "DeepSkyBlue4" :bold t))))
      (font-lock-warning-face ((t (:foreground "Red" :bold t))))
      (show-paren-match-face ((t (:background "LightGoldenrod1"))))
      (magit-item-highlight ((t (:background "gray98"))))
-     (magit-diff-add ((t (:foreground "green" :bold t))))
+     (magit-diff-add ((t (:foreground "SeaGreen" :bold t))))
+     (magit-diff-del ((t (:foreground "MediumVioletRed" :bold t))))
      (isearch ((t (:foreground "white" :background "DarkOrange1"))))
      (font-latex-sectioning-2-face ((t (:foreground "black"))))
      (font-latex-bold-face ((t (:foreground "black" :bold t))))
-     (tuareg-font-lock-governing-face ((t (:foreground "DeepSkyBlue4" :bold t))))
+     (tuareg-font-lock-governing-face ((t (:foreground "#990099" :bold t))))
      (w3m-anchor-face ((t (:foreground "DeepSkyBlue4" :bold t))))
      (w3m-arrived-anchor-face ((t (:foreground "Red"))))
      (emms-playlist-track-face ((t (:foreground "black"))))
      (emms-playlist-selected-face ((t (:foreground "Red" :background "white" :bold t))))
+
+     (org-level-1 ((t (:foreground "DeepSkyBlue4" :bold t))))
+     (org-level-2 ((t (:foreground "#990099" :bold t))))
+     (org-level-3 ((t (:foreground "#009999" :bold t))))
      )))
 (provide 'color-theme-pmr)

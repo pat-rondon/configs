@@ -1,5 +1,8 @@
 (setq c-basic-offset 4)
 
+(setq compilation-scroll-output t)
+(setq compilation-auto-jump-to-first-error t)
+
 (defun comment-heading (left right fill)
   (let* ((start   (point-at-bol))
          (end     (point-at-eol))

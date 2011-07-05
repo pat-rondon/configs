@@ -5,6 +5,9 @@
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/color-theme-6.6.0/")
 ;; (add-to-list 'load-path "~/src/magit-0.8.2/")
 
+;; Proof General
+(load-file "/opt/local/share/ProofGeneral-3.7.1/generic/proof-site.el")
+
 ;; Haskell
 
 (load "/opt/local/share/emacs/site-lisp/haskell-mode-2.4/haskell-site-file")
