@@ -61,9 +61,9 @@ if [ "$color_prompt" = yes ]; then
     BLUE="\[$(tput setaf 1)\]"
     RESET="\[$(tput sgr0)\]"
     RED="\[$(tput setaf 4)\]"
-    PS1="\n$BLUE\\u $RED\\h$RESET \\w\n$ "
+    PS1="\n$BLUE\\u $RED\\h$RESET [\d \@] \\w\n$ "
 else
-    PS1='\n\u@\h \w\n\$ '
+    PS1='\n\u@\h [\d \@] \w\n\$ '
 fi
 unset color_prompt force_color_prompt
 
