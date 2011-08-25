@@ -4,6 +4,6 @@
 (setq-default TeX-parse-self t)
 
 (defun set-TeX-faces ()
-  (color-theme-pmr))
+  (color-theme-froufrou))
 
 (add-hook 'TeX-mode-hook 'set-TeX-faces)

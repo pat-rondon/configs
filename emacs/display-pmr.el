@@ -11,8 +11,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/color-themes")
 (require 'color-theme)
-(require 'color-theme-pmr)
-(require 'color-theme-pmr-dark)
+(require 'color-theme-froufrou)
 (defvar pmr-frame-font)
 (if (eq system-type 'darwin)
     (setq pmr-frame-font
@@ -20,4 +19,4 @@
     (setq pmr-frame-font "DejaVu Sans Mono-12"))
 (set-frame-font pmr-frame-font)
 (set-face-attribute 'default nil :font pmr-frame-font)
-(color-theme-pmr)
+(color-theme-froufrou)
