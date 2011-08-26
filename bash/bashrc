@@ -28,6 +28,13 @@ shopt -s checkwinsize
 #     debian_chroot=$(cat /etc/debian_chroot)
 # fi
 
+# Nobody knows what this terminal is
+case "$TERM" in
+    rxvt-256color)
+        TERM=rxvt-unicode
+        ;;
+esac
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
