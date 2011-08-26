@@ -9,7 +9,7 @@
 (column-number-mode t)
 (setq mode-line-format (butlast mode-line-format))
 
-(add-to-list 'load-path "~/.emacs.d/color-themes")
+(add-to-list 'load-path "~/.emacs.d/color-themes/color-theme-froufrou/")
 (require 'color-theme)
 (require 'color-theme-froufrou)
 (defvar pmr-frame-font)

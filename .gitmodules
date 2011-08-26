@@ -1,0 +1,3 @@
+[submodule "emacs/color-themes/color-theme-froufrou"]
+	path = emacs/color-themes/color-theme-froufrou
+	url = git@github.com:pat-rondon/Emacs-froufrou-Color-Theme.git
