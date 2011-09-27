@@ -24,6 +24,7 @@
              (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
 
 (windmove-default-keybindings)
+(setq windmove-wrap-around t)
 (add-hook 'org-shiftup-final-hook 'windmove-up)
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
@@ -38,6 +39,11 @@
                           ([(control shift left)] . [(meta shift -)])))
 (setq org-replace-disputed-keys t)
 
+(defun reload-this-file ()
+  (interactive)
+  (revert-buffer nil t))
+
 (global-set-key (kbd "C-c |") 'align-regexp)
+(global-set-key (kbd "C-c r") 'reload-this-file)
 (global-set-key (kbd "C-c l") 'lgrep)
 (global-set-key (kbd "C-c v") 'annotjump)
