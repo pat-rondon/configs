@@ -9,9 +9,10 @@
 (column-number-mode t)
 (setq mode-line-format (butlast mode-line-format))
 
-(add-to-list 'load-path "~/.emacs.d/color-themes/color-theme-froufrou/")
+(add-to-list 'load-path "~/.emacs.d/color-themes/color-theme-distressed/")
 (require 'color-theme)
-(require 'color-theme-froufrou)
+(require 'color-theme-distressed)
+(color-theme-distressed)
 (defvar pmr-frame-font)
 (if (eq system-type 'darwin)
     (setq pmr-frame-font
@@ -19,4 +20,3 @@
     (setq pmr-frame-font "DejaVu Sans Mono-12"))
 (set-frame-font pmr-frame-font)
 (set-face-attribute 'default nil :font pmr-frame-font)
-(color-theme-froufrou)
