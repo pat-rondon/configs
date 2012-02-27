@@ -1,7 +1,7 @@
 (global-font-lock-mode 1)
 (show-paren-mode 1)
 (blink-cursor-mode 0)
-(set-fringe-mode '(0 . 0))
+(set-fringe-mode 'minimal)
 (setq visible-bell 't)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
