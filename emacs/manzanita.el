@@ -6,15 +6,15 @@
 ;; (add-to-list 'load-path "~/src/magit-0.8.2/")
 
 ;; Proof General
-(load-file "/opt/local/share/ProofGeneral-3.7.1/generic/proof-site.el")
+;; (load-file "/opt/local/share/ProofGeneral-3.7.1/generic/proof-site.el")
 
 ;; Haskell
 
-(load "/opt/local/share/emacs/site-lisp/haskell-mode-2.4/haskell-site-file")
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'haskell-mode-hook 'font-lock-mode)
-(add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
+;; (load "/opt/local/share/emacs/site-lisp/haskell-mode-2.4/haskell-site-file")
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;; (add-hook 'haskell-mode-hook 'font-lock-mode)
+;; (add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
 
 ;; auctex
 
