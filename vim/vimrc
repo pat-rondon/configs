@@ -1,4 +1,10 @@
+call pathogen#infect()
+
+set nocompatible
+let mapleader=","
+
 set visualbell
+set title
 
 set wildmenu
 set wildmode=longest:full
@@ -12,9 +18,21 @@ set expandtab
 set tabstop=8
 
 set shiftwidth=2
+set shiftround
 set textwidth=0
+set nowrap
+
+set hidden
+
+set showmatch
+
+set ignorecase
+set smartcase
 
 set hlsearch
 set incsearch
+nmap <silent> ,/ :nohlsearch<CR>
 
 imap jj <ESC>
+
+colors xoria256

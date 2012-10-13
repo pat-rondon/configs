@@ -13,3 +13,5 @@
 (add-hook 'tuareg-mode-hook
   (lambda ()
     (define-key tuareg-mode-map (kbd "C-c a") 'ocaml-comment-heading)))
+
+(setq tuareg-in-indent 2)

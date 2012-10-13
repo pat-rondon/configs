@@ -1,5 +1,4 @@
-set guifont=Droid\ Sans\ Mono\ 11
+set guifont=Menlo
 set guioptions-=T
 set guioptions-=m
 set guioptions-=L
-colors darktango

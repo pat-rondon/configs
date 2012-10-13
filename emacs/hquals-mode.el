@@ -36,3 +36,9 @@
       (cons
        '("\\.hquals\\'" . hquals-mode)
        auto-mode-alist))
+
+;; TODO: Consing twice is stupid
+(setq auto-mode-alist
+      (cons
+       '("\\.hquals.cpp\\'" . hquals-mode)
+       auto-mode-alist))

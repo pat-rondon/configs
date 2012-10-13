@@ -111,4 +111,13 @@ fi
 
 export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/
 export EDITOR="emacsclient -c"
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/.cabal/bin:$PATH
+
+function ntimes () {
+  TIMES=$1
+  shift
+  for i in `seq 1 $TIMES`; do $*; done
+}
+
+alias g2b="sudo shutdown -s +120"
+alias up=". up"
