@@ -3,9 +3,6 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 (add-to-list 'load-path "~/.emacs.d")
-;; ;; (add-to-list 'load-path "~/src/evil/")
-;; ;; (require 'evil)
-;; ;; (add-to-list 'load-path "/opt/local/share/emacs/23.3/site-lisp/")
 
 (let ((host-specific-files (concat "~/.emacs.d/" system-name ".el")))
   (if (file-exists-p host-specific-files)
@@ -22,9 +19,6 @@
 (load "ocaml-pmr")
 (load "w3m-pmr")
 (load "eshell-pmr")
-
-;; (load "hquals-mode")
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

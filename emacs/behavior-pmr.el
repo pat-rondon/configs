@@ -2,8 +2,6 @@
 
 (transient-mark-mode 1)
 
-(setq sentence-end-double-space nil)
-
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-ignore-files
@@ -53,16 +51,12 @@
 (global-set-key (kbd "C-c |") 'align-regexp)
 (global-set-key (kbd "C-c r") 'reload-this-file)
 (global-set-key (kbd "C-c l") 'lgrep)
-(global-set-key (kbd "C-c v") 'annotjump)
 
 (defun dont-kill-emacs ()
   (interactive)
   (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
   
 (global-set-key "\C-x\C-c" 'dont-kill-emacs)
-
-;; (require 'projectile)
-;; (projectile-global-mode)
 
 ;; Sane Keybindings Via Evil
 
@@ -77,15 +71,3 @@
 (define-key evil-normal-state-map ",g" 'magit-status)
 (define-key evil-normal-state-map ",c" 'compile)
 (define-key evil-normal-state-map ",d" 'kill-this-buffer)
-
-;; (mapcar (lambda (state)
-;;           (evil-declare-key state org-mode-map
-;;             (kbd "M-l") 'org-metaright
-;;             (kbd "M-h") 'org-metaleft
-;;             (kbd "M-k") 'org-metaup
-;;             (kbd "M-j") 'org-metadown
-;;             (kbd "M-L") 'org-shiftmetaright
-;;             (kbd "M-H") 'org-shiftmetaleft
-;;             (kbd "M-K") 'org-shiftmetaup
-;;             (kbd "M-J") 'org-shiftmetadown))
-;;         '(normal insert))

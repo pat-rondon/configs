@@ -1,4 +1,3 @@
-;; (load "auctex.el" nil t t)
 (setq TeX-PDF-mode t)
 (setq-default TeX-master nil)
 (setq-default TeX-parse-self t)
