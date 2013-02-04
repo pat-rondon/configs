@@ -8,3 +8,4 @@
             (if (= (user-uid) 0) "# " "$ "))))
 
 (setq eshell-prompt-regexp "^[#$] ")
+(global-set-key "\C-xm" 'eshell)

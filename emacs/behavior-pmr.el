@@ -6,6 +6,8 @@
 (setq ido-enable-flex-matching t)
 (setq ido-ignore-files
       '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$" ".*\\.pdf$"))
+(ido-ubiquitous-mode)
+(global-set-key "\C-xi" 'imenu)
 
 (setq-default indent-tabs-mode nil)
 
