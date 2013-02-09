@@ -1,9 +1,11 @@
+;;;; C
 (setq c-basic-offset 2)
 
-(global-set-key (kbd "C-c C-c") 'compile)
+;;;; Compilation
 (setq compilation-scroll-output t)
 (setq compilation-auto-jump-to-first-error t)
 
+;;;; Commenting
 (defun comment-heading (left right fill)
   (let* ((start   (point-at-bol))
          (end     (point-at-eol))
@@ -19,5 +21,3 @@
          (endcap  (concat left (make-string width fill) right)))
     (delete-region start end)
     (insert endcap "\n" left lpad " " text " " rpad right "\n" endcap)))
-
-(global-set-key (kbd "C-c g") 'magit-status)

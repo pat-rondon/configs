@@ -13,12 +13,11 @@
 (setenv "PATH" (concat "/usr/texbin" ":" "/usr/local/bin" ":" (getenv "PATH")))
 
 (load "display-pmr")                ;; How Emacs looks
-(load "behavior-pmr")               ;; How Emacs behaves and keybindings
 (load "programming-pmr")            ;; General programming settings
 (load "latex-pmr")
 (load "ocaml-pmr")
-(load "w3m-pmr")
 (load "eshell-pmr")
+(load "behavior-pmr")               ;; How Emacs behaves and keybindings
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
