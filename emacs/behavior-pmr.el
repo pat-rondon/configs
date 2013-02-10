@@ -1,13 +1,15 @@
 (server-start)
 
 (transient-mark-mode 1)
+(setq make-backup-files nil)
 
-(ido-mode t)
-(setq ido-enable-flex-matching t)
-(setq ido-ignore-files
-      '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$" ".*\\.pdf$"))
-(ido-ubiquitous-mode)
-(global-set-key "\C-xi" 'imenu)
+(eval-after-load 'ido-ubiquitous-autoloads
+  '(progn
+     (ido-mode t)
+     (ido-ubiquitous t)
+     (setq ido-enable-flex-matching t)
+     (setq ido-ignore-files
+	   '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$" ".*\\.pdf$"))))
 
 (setq-default indent-tabs-mode nil)
 
@@ -24,6 +26,21 @@
 (add-hook 'emacs-lisp-mode-hook
           '(lambda () 
              (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
+
+(defun reload-this-file ()
+  (interactive)
+  (revert-buffer nil t))
+
+;;;; Keybindings
+(global-set-key "\C-xi" 'imenu)
+(global-set-key (kbd "C-c |") 'align-regexp)
+(global-set-key (kbd "C-c r") 'reload-this-file)
+(global-set-key (kbd "C-c l") 'lgrep)
+
+(defun dont-kill-emacs ()
+  (interactive)
+  (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
+(global-set-key "\C-x\C-c" 'dont-kill-emacs)
 
 (windmove-default-keybindings)
 (global-set-key (kbd "<select>") 'windmove-up)
@@ -42,34 +59,6 @@
                           ([(control shift left)] . [(meta shift -)])))
 (setq org-replace-disputed-keys t)
 
-(global-set-key "\C-ca" 'org-agenda)
-
-(setq org-agenda-files '("~/dynamic/agendas"))
-
-(defun reload-this-file ()
-  (interactive)
-  (revert-buffer nil t))
-
-(global-set-key (kbd "C-c |") 'align-regexp)
-(global-set-key (kbd "C-c r") 'reload-this-file)
-(global-set-key (kbd "C-c l") 'lgrep)
-
-(defun dont-kill-emacs ()
-  (interactive)
-  (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
-  
-(global-set-key "\C-x\C-c" 'dont-kill-emacs)
-
-;; Sane Keybindings Via Evil
-
-(add-to-list 'load-path "~/src/evil")
-(require 'evil)  
-(evil-mode 1)
-
-(setq evil-insert-state-modes '("Magit Log Edit"))
-
-(define-key evil-normal-state-map ",b" 'ido-switch-buffer)
-(define-key evil-normal-state-map ",f" 'ido-find-file)
-(define-key evil-normal-state-map ",g" 'magit-status)
-(define-key evil-normal-state-map ",c" 'compile)
-(define-key evil-normal-state-map ",d" 'kill-this-buffer)
+;; Programming keys
+(global-set-key (kbd "C-x c") 'compile)
+(global-set-key (kbd "C-x g") 'magit-status)
