@@ -1,4 +1,8 @@
 *~
+emacs/abbrev_defs
+emacs/auto-complete-mode/**
 emacs/auto-save-list
+emacs/elpa/**
+emacs/semanticdb/**
 emacs/session.*
 *.elc
