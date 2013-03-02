@@ -1,4 +1,5 @@
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
+                         ("MELPA" . "http://melpa.milkbox.net/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
@@ -12,12 +13,151 @@
 (setq exec-path (append exec-path '("/usr/texbin" "/usr/local/bin")))
 (setenv "PATH" (concat "/usr/texbin" ":" "/usr/local/bin" ":" (getenv "PATH")))
 
-(load "display-pmr")                ;; How Emacs looks
-(load "programming-pmr")            ;; General programming settings
-(load "latex-pmr")
-(load "ocaml-pmr")
-(load "eshell-pmr")
-(load "behavior-pmr")               ;; How Emacs behaves and keybindings
+;;;; General behavior
+(server-start)
+
+(transient-mark-mode 1)
+(setq make-backup-files nil)
+
+(eval-after-load 'ido-ubiquitous-autoloads
+  '(progn
+     (ido-mode t)
+     (ido-ubiquitous t)
+     (setq ido-enable-flex-matching t)
+     (setq ido-ignore-files
+	   '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$" ".*\\.pdf$"))))
+
+(setq-default indent-tabs-mode nil)
+
+(set-language-environment "UTF-8")
+
+(put 'set-goal-column 'disabled nil)
+
+;; Automatically byte-compile emacs-lisp files upon save
+(add-hook 'emacs-lisp-mode-hook
+          '(lambda () 
+             (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
+
+(defun reload-this-file ()
+  (interactive)
+  (revert-buffer nil t))
+
+;; Keybindings
+(global-set-key "\C-xi" 'imenu)
+(global-set-key (kbd "C-c r") 'reload-this-file)
+(global-set-key (kbd "C-x /") 'lgrep)
+(global-set-key (kbd "C-x c") 'compile)
+(global-set-key (kbd "C-x g") 'magit-status)
+
+(defun dont-kill-emacs ()
+  (interactive)
+  (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
+(global-set-key "\C-x\C-c" 'dont-kill-emacs)
+
+(windmove-default-keybindings)
+(global-set-key (kbd "<select>") 'windmove-up)
+(setq windmove-wrap-around t)
+(add-hook 'org-shiftup-final-hook 'windmove-up)
+(add-hook 'org-shiftleft-final-hook 'windmove-left)
+(add-hook 'org-shiftdown-final-hook 'windmove-down)
+(add-hook 'org-shiftright-final-hook 'windmove-right)
+
+(setq org-disputed-keys '(([(shift up)] . [(meta p)])
+                          ([(shift down)] . [(meta n)])
+                          ([(shift left)] . [(meta -)])
+                          ([(shift right)] . [(meta +)])
+                          ([(meta return)] . [(control meta return)])
+                          ([(control shift right)] . [(meta shift +)])
+                          ([(control shift left)] . [(meta shift -)])))
+(setq org-replace-disputed-keys t)
+
+(evil-mode t)
+
+;;;; Appearance
+(global-font-lock-mode 1)
+(show-paren-mode 1)
+(blink-cursor-mode 0)
+(set-fringe-mode 4)
+(setq visible-bell 't)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(set-scroll-bar-mode nil)
+(column-number-mode t)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/color-themes/")
+(load-theme 'monotonic t)
+(defvar pmr-frame-font)
+(setq pmr-frame-font "Droid Sans Mono-12")
+(set-frame-font pmr-frame-font)
+(set-face-attribute 'default nil :font pmr-frame-font)
+
+;;;; Programming 
+;; C
+(setq c-basic-offset 2)
+
+;; Compilation
+(setq compilation-scroll-output t)
+(setq compilation-auto-jump-to-first-error t)
+
+;; Commenting
+(defun comment-heading (left right fill)
+  (let* ((start   (point-at-bol))
+         (end     (point-at-eol))
+         (len     (- end start))
+         (text    (buffer-substring start end))
+         (width   (- 80 (+ (length left) (length right))))
+         (center  (/ width 2))
+         (textcen (/ (+ len 2) 2.0))
+         (lpadc   (- center (floor textcen)))
+         (rpadc   (- center (ceiling textcen)))
+         (lpad    (make-string lpadc fill))
+         (rpad    (make-string rpadc fill))
+         (endcap  (concat left (make-string width fill) right)))
+    (delete-region start end)
+    (insert endcap "\n" left lpad " " text " " rpad right "\n" endcap)))
+
+;; OCaml
+(setq auto-mode-alist (cons '("\\.ml\\w?" . tuareg-mode) auto-mode-alist))
+(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+(autoload 'camldebug "camldebug" "Run the Caml debugger" t)
+(autoload 'caml-types-show-type "caml-types" "Show type of expression / pattern at point." t)
+
+(defun ocaml-comment-heading ()
+  (interactive)
+  (comment-heading "(*" "*)" ?*))
+
+(add-hook 'tuareg-mode-hook '(lambda ()
+  (global-set-key (kbd "C-c C-t") 'caml-types-show-type)))
+
+(add-hook 'tuareg-mode-hook
+  (lambda ()
+    (define-key tuareg-mode-map (kbd "C-c a") 'ocaml-comment-heading)))
+
+(setq tuareg-in-indent 2)
+
+;;;; Latex
+(setq TeX-PDF-mode t)
+(setq-default TeX-master nil)
+(setq-default TeX-parse-self t)
+
+(defun turn-on-outline-minor-mode () (outline-minor-mode 1))
+
+(add-hook 'LaTeX-mode-hook 'turn-on-outline-minor-mode)
+(add-hook 'latex-mode-hook 'turn-on-outline-minor-mode)
+(setq outline-minor-mode-prefix "\C-c\C-o")
+
+;;;; EShell
+(setq eshell-prompt-function
+  (lambda ()
+    (concat "\n"
+            (format-time-string "%d-%m-%Y %H:%M " (current-time))
+            (abbreviate-file-name
+             (eshell/pwd))
+            "\n"
+            (if (= (user-uid) 0) "# " "$ "))))
+
+(setq eshell-prompt-regexp "^[#$] ")
+(global-set-key "\C-xm" 'eshell)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
