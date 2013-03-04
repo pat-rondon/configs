@@ -19,6 +19,9 @@
 (transient-mark-mode 1)
 (setq make-backup-files nil)
 
+(require 'uniquify)
+(setq uniquify-buffer-style 'forward)
+
 (eval-after-load 'ido-ubiquitous-autoloads
   '(progn
      (ido-mode t)
@@ -79,12 +82,11 @@
 (blink-cursor-mode 0)
 (set-fringe-mode 4)
 (setq visible-bell 't)
-(tool-bar-mode 0)
-(menu-bar-mode 0)
+(tool-bar-mode nil)
+(menu-bar-mode nil)
 (set-scroll-bar-mode nil)
 (column-number-mode t)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/color-themes/")
 (load-theme 'monotonic t)
 (defvar pmr-frame-font)
 (setq pmr-frame-font "Droid Sans Mono-12")

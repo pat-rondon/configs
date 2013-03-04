@@ -1,1 +1,0 @@
-/Users/pmr/src/csc/examples/monotonic-theme.el
