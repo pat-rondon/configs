@@ -3,9 +3,9 @@
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
-(let ((host-specific-files (concat "~/.emacs.d/" system-name ".el")))
-  (if (file-exists-p host-specific-files)
-      (load host-specific-files)
+(let ((host-specific-config (concat "~/.emacs.d/" system-name ".el")))
+  (if (file-exists-p host-specific-config)
+      (load host-specific-config)
       (message (concat "No host-specific customizations for " system-name))))
 
 (setq exec-path (append exec-path '("/usr/texbin" "/usr/local/bin")))
