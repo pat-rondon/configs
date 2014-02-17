@@ -48,9 +48,9 @@
 ;; Keybindings
 (global-set-key "\C-xi" 'imenu)
 (global-set-key (kbd "C-c r") 'reload-this-file)
-(global-set-key (kbd "C-x /") 'lgrep)
-(global-set-key (kbd "C-x c") 'compile)
-(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-c /") 'lgrep)
+(global-set-key (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-c g") 'magit-status)
 
 (defun dont-kill-emacs ()
   (interactive)
@@ -87,7 +87,7 @@
 (blink-cursor-mode 0)
 (set-fringe-mode 4)
 (setq visible-bell 't)
-(menu-bar-mode nil)
+(menu-bar-mode -1)
 (set-scroll-bar-mode nil)
 (column-number-mode t)
 
