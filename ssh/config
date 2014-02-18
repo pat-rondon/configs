@@ -1,15 +1,3 @@
-Host meatwad
-     Hostname meatwad.ucsd.edu
-     ForwardX11 yes
-
-Host frylock
-     Hostname frylock.ucsd.edu
-     ForwardX11 yes
-
-Host goto
-     Hostname goto.ucsd.edu
-     ForwardX11 yes
-
-Host limon
-     Hostname localhost
-     Port     2222
+Host linode
+     User     pmr
+     Hostname 198.74.59.216
