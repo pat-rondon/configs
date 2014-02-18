@@ -1,13 +1,10 @@
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("MELPA" . "http://melpa.milkbox.net/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
-(add-to-list 'load-path "~/.emacs.d")
-
-(let ((host-specific-files (concat "~/.emacs.d/" system-name ".el")))
-  (if (file-exists-p host-specific-files)
-      (load host-specific-files)
+(let ((host-specific-config (concat "~/.emacs.d/" system-name ".el")))
+  (if (file-exists-p host-specific-config)
+      (load host-specific-config)
       (message (concat "No host-specific customizations for " system-name))))
 
 (setq exec-path (append exec-path '("/usr/texbin" "/usr/local/bin")))
@@ -22,10 +19,10 @@
 (require 'uniquify)
 (setq uniquify-buffer-style 'forward)
 
-(eval-after-load 'ido-ubiquitous-autoloads
+(eval-after-load "ido-ubiquitous-autoloads"
   '(progn
-     (ido-mode t)
-     (ido-ubiquitous t)
+     (ido-mode)
+     (ido-ubiquitous-mode)
      (setq ido-enable-flex-matching t)
      (setq ido-ignore-files
 	   '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$" ".*\\.pdf$"))))
@@ -48,9 +45,9 @@
 ;; Keybindings
 (global-set-key "\C-xi" 'imenu)
 (global-set-key (kbd "C-c r") 'reload-this-file)
-(global-set-key (kbd "C-x /") 'lgrep)
-(global-set-key (kbd "C-x c") 'compile)
-(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-c /") 'lgrep)
+(global-set-key (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-c g") 'magit-status)
 
 (defun dont-kill-emacs ()
   (interactive)
@@ -87,7 +84,7 @@
 (blink-cursor-mode 0)
 (set-fringe-mode 4)
 (setq visible-bell 't)
-(menu-bar-mode nil)
+(menu-bar-mode -1)
 (set-scroll-bar-mode nil)
 (column-number-mode t)
 
