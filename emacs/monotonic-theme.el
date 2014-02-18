@@ -3,7 +3,7 @@
   'monotonic
   '(default ((t (:background "#ffffff" :foreground "#4a4a4a" ))))
 '(font-lock-builtin-face ((t (:foreground "#4a4a4a" :weight normal ))))
-'(font-lock-comment-face ((t (:foreground "#6565b5" ))))
+'(font-lock-comment-face ((t (:foreground "#858585" :weight normal ))))
 '(compilation-error ((t (:foreground "#b56565" ))))
 '(compilation-info ((t (:foreground "#65b565" ))))
 '(font-lock-constant-face ((t (:foreground "#4a4a4a" :weight normal ))))
@@ -25,7 +25,9 @@
 '(font-lock-preprocessor-face ((t (:foreground "#4a4a4a" :weight normal ))))
 '(minibuffer-prompt ((t (:foreground "#4a4a4a" :weight bold ))))
 '(region ((t (:background "#eaeaea" ))))
-'(font-lock-string-face ((t (:foreground "#6565b5" ))))
+'(font-lock-string-face ((t (:foreground "#858585" :weight normal ))))
+'(tuareg-font-lock-governing-face ((t (:foreground "#4a4a4a" :weight normal ))))
+'(tuareg-font-lock-operator-face ((t (:foreground "#4a4a4a" :weight normal ))))
 '(font-lock-type-face ((t (:foreground "#4a4a4a" :weight normal ))))
 '(font-lock-variable-name-face ((t (:foreground "#4a4a4a" :weight normal ))))
 
