@@ -82,16 +82,16 @@
 (global-font-lock-mode 1)
 (show-paren-mode 1)
 (blink-cursor-mode 0)
-(set-fringe-mode 4)
 (setq visible-bell 't)
 (menu-bar-mode -1)
-(set-scroll-bar-mode nil)
 (column-number-mode t)
 
 (load-theme 'monotonic t)
 (if window-system
     (progn
       (tool-bar-mode 0)
+      (set-scroll-bar-mode nil)
+      (set-fringe-mode 4)
       (defvar pmr-frame-font)
       (setq pmr-frame-font "Droid Sans Mono-12")
       (set-frame-font pmr-frame-font)

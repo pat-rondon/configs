@@ -1,6 +1,6 @@
 [user]
 name  = Pat Rondon
-email = prondon@cs.ucsd.edu
+email = pat.rondon@gmail.com
 
 [alias]
 ci       = commit -a
@@ -22,4 +22,4 @@ color = true
 color = auto
 
 [push]
-default = current
+default = simple
