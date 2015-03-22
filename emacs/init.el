@@ -103,7 +103,6 @@
 
 ;; Compilation
 (setq compilation-scroll-output t)
-(setq compilation-auto-jump-to-first-error t)
 
 ;; Commenting
 (defun comment-heading (left right fill)
