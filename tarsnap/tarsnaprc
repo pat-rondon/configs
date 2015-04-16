@@ -23,3 +23,4 @@ exclude ~/static/video
 exclude ~/nltk_data
 exclude ~/bin
 exclude ~/.opam
+exclude ~/.debug
