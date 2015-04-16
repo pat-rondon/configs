@@ -1,3 +1,7 @@
 Host linode
      User     pmr
      Hostname 198.74.59.216
+
+Host droplet
+     User pmr
+     Hostname 107.170.133.148
