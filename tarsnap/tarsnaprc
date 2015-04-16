@@ -1,0 +1,24 @@
+keyfile ~/private/tarsnap.key
+cachedir ~/.tarsnap-cache
+
+exclude *~
+exclude *.o
+exclude *.cmo
+exclude *.cmi
+exclude *.cmx
+exclude *.cma
+exclude *.cmxa
+exclude *.pyc
+exclude *.elc
+exclude *.DS_Store
+exclude ~/tmp
+exclude ~/.android
+exclude ~/.Trash
+exclude ~/Applications
+exclude ~/Downloads
+exclude ~/Library
+exclude ~/Public
+exclude ~/Google Drive
+exclude ~/static/video
+exclude ~/nltk_data
+exclude ~/bin
