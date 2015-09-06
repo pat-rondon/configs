@@ -11,6 +11,7 @@ exclude *.cmxa
 exclude *.pyc
 exclude *.elc
 exclude *.DS_Store
+exclude *.trace
 exclude ~/tmp
 exclude ~/.android
 exclude ~/.Trash
