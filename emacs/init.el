@@ -1,4 +1,5 @@
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
@@ -82,7 +83,7 @@
 (global-font-lock-mode 1)
 (show-paren-mode 1)
 (blink-cursor-mode 0)
-(setq visible-bell 't)
+(setq ring-bell-function 'ignore)
 (menu-bar-mode -1)
 (column-number-mode t)
 
