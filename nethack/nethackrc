@@ -1,0 +1,6 @@
+OPTIONS=catname:Maru
+OPTIONS=color
+OPTIONS=dogname:Doge
+OPTIONS=horsename:@horse_ebooks
+OPTIONS=lit_corridor
+OPTIONS=pickup_types:$"?+!=/%
