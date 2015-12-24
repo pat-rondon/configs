@@ -34,6 +34,9 @@
 
 (put 'set-goal-column 'disabled nil)
 
+;; Disable tedious unnecessary window creation.
+(setq display-buffer-base-action '(display-buffer-use-some-window))
+
 ;; Automatically byte-compile emacs-lisp files upon save
 (add-hook 'emacs-lisp-mode-hook
           '(lambda () 
