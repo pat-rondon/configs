@@ -39,8 +39,11 @@
 
 ;; Automatically byte-compile emacs-lisp files upon save
 (add-hook 'emacs-lisp-mode-hook
-          '(lambda () 
+          '(lambda ()
              (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
+
+;; Kill trailing whitespace on save.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (defun reload-this-file ()
   (interactive)
@@ -101,7 +104,7 @@
       (set-frame-font pmr-frame-font)
       (set-face-attribute 'default nil :font pmr-frame-font)))
 
-;;;; Programming 
+;;;; Programming
 ;; C
 (setq c-basic-offset 2)
 
