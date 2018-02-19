@@ -104,6 +104,10 @@
       (set-frame-font pmr-frame-font)
       (set-face-attribute 'default nil :font pmr-frame-font)))
 
+;;;; Spelling
+(if (file-executable-p "/opt/local/bin/aspell")
+    (setq ispell-program-name "/opt/local/bin/aspell"))
+
 ;;;; Programming
 ;; C
 (setq c-basic-offset 2)
