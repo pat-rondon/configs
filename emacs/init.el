@@ -78,6 +78,9 @@
                           ([(control shift left)] . [(meta shift -)])))
 (setq org-replace-disputed-keys t)
 
+(dolist (hook '(text-mode-hook org-mode-hook))
+  (add-hook hook (lambda () flyspell-mode)))
+
 ; Packages are loaded after the init file, so we have to defer loading
 ; Evil mode.
 (add-hook 'after-init-hook
@@ -131,6 +134,9 @@
          (endcap  (concat left (make-string width fill) right)))
     (delete-region start end)
     (insert endcap "\n" left lpad " " text " " rpad right "\n" endcap)))
+
+;; Comment spelling.
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;; OCaml
 (setq auto-mode-alist (cons '("\\.ml\\w?" . tuareg-mode) auto-mode-alist))
