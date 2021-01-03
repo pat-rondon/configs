@@ -1,0 +1,48 @@
+*.o
+*.a
+*.so
+*.dylib
+*.cm[aio]
+*.cmxa
+*.native
+*.hi
+*.dyn_hi
+*.pyc
+*.elc
+*.DS_Store
+*.trace
+*.exe
+*.bc.js
+*.swp
+*~
+.stack-work
+pp:/Users/pmr/.Trash/
+pp:/Users/pmr/Applications/
+pp:/Users/pmr/Desktop/
+pp:/Users/pmr/Documents/
+pp:/Users/pmr/Downloads/
+pp:/Users/pmr/Dropbox/
+pp:/Users/pmr/Google Drive/
+pp:/Users/pmr/Library/
+pp:/Users/pmr/Music/iTunes/iTunes Media/TV Shows/
+pp:/Users/pmr/Pictures/Photos Library/
+pp:/Users/pmr/Pictures/Photos Library.photoslibrary
+pp:/Users/pmr/Public/
+re:(/Users|/home)/pmr/.cabal/
+re:(/Users|/home)/pmr/.cargo/
+re:(/Users|/home)/pmr/.debug/
+re:(/Users|/home)/pmr/.gem/
+re:(/Users|/home)/pmr/.local/bin/
+re:(/Users|/home)/pmr/.opam/
+re:(/Users|/home)/pmr/.npm/
+re:(/Users|/home)/pmr/.stack/
+re:(/Users|/home)/pmr/.vscode
+re:(/Users|/home)/pmr/.wine
+re:(/Users|/home)/pmr/.dropbox
+re:(/Users|/home)/pmr/bin/
+re:(/Users|/home)/pmr/nltk_data/
+re:(/Users|/home)/pmr/static/video/
+re:(/Users|/home)/pmr/tmp/
+re:.*/site-packages/
+re:.*/emacs/elpa/
+re:.*/emacs/semanticdb/
