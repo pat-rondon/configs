@@ -20,13 +20,7 @@
 (require 'uniquify)
 (setq uniquify-buffer-style 'forward)
 
-(eval-after-load "ido-ubiquitous-autoloads"
-  '(progn
-     (ido-mode)
-     (ido-ubiquitous-mode)
-     (setq ido-enable-flex-matching t)
-     (setq ido-ignore-files
-	   '(".*\\.hi$" ".*\\.cm[oix]$" ".*\\.o$" ".*\\.pdf$"))))
+(ivy-mode 1)
 
 (setq-default indent-tabs-mode nil)
 
