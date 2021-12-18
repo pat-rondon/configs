@@ -1,15 +1,16 @@
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
-(let ((host-specific-config (concat "~/.emacs.d/" system-name ".el")))
+(require 'bind-key)
+(require 'use-package)
+
+(let ((host-specific-config (concat "~/.emacs.d/" (system-name) ".el")))
   (if (file-exists-p host-specific-config)
       (load host-specific-config)
-      (message (concat "No host-specific customizations for " system-name))))
+      (message (concat "No host-specific customizations for " (system-name)))))
 
-(setq exec-path (append exec-path '("/usr/texbin" "/usr/local/bin")))
-(setenv "PATH" (concat "/usr/texbin" ":" "/usr/local/bin" ":" (getenv "PATH")))
+(setq exec-path (append exec-path '("/opt/local/bin" "/usr/texbin" "/usr/local/bin")))
+(setenv "PATH" (concat "/opt/local/bin" ":" "/usr/texbin" ":" "/usr/local/bin" ":" (getenv "PATH")))
 
 ;;;; General behavior
 (server-start)
@@ -46,11 +47,11 @@
   (revert-buffer nil t))
 
 ;; Keybindings
-(global-set-key "\C-xi" 'imenu)
-(global-set-key (kbd "C-c r") 'reload-this-file)
-(global-set-key (kbd "C-c /") 'lgrep)
-(global-set-key (kbd "C-c c") 'compile)
-(global-set-key (kbd "C-c g") 'magit-status)
+(bind-key "C-x C-f" 'counsel-find-file)
+(bind-key "C-c r" 'reload-this-file)
+(bind-key "C-c /" 'lgrep)
+(bind-key "C-c c" 'compile)
+(bind-key "C-c g" 'magit-status)
 
 (defun dont-kill-emacs ()
   (interactive)
