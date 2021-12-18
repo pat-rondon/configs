@@ -104,6 +104,14 @@
       (set-frame-font pmr-frame-font)
       (set-face-attribute 'default nil :font pmr-frame-font)))
 
+;;;; Project and view management
+(use-package perspective
+  :bind
+  ("C-x b" . persp-ivy-switch-buffer)
+  :config
+  (progn (persp-mode)
+         (setq persp-state-default-file "~/.perspective-state")))
+
 ;;;; Spelling
 (if (file-executable-p "/opt/local/bin/aspell")
     (setq ispell-program-name "/opt/local/bin/aspell"))
