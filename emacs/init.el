@@ -76,7 +76,13 @@
 (setq org-replace-disputed-keys t)
 
 (dolist (hook '(text-mode-hook org-mode-hook))
-  (add-hook hook (lambda () flyspell-mode)))
+  (add-hook hook (lambda () (flyspell-mode))))
+;; org plus electric indent seems to be broken in my config; restore
+;; sane behavior for C-j.  Also use fancy punctuation chars.
+(add-hook 'org-mode-hook
+          (lambda () (progn
+                       (electric-indent-local-mode -1)
+                       (typo-mode))))
 
 ; Packages are loaded after the init file, so we have to defer loading
 ; Evil mode.
@@ -144,23 +150,30 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;; OCaml
+
+;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
+(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+
+(require 'ocamlformat)
 (setq auto-mode-alist (cons '("\\.ml\\w?" . tuareg-mode) auto-mode-alist))
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+(autoload 'merlin-mode "merlin" "Merlin mode" t)
+(with-eval-after-load 'company
+ (add-to-list 'company-backends 'merlin-company-backend))
+(add-hook 'tuareg-mode-hook (lambda ()
+  (define-key tuareg-mode-map (kbd "C-M-<tab>") #'ocamlformat)
+  (add-hook 'before-save-hook #'ocamlformat-before-save)))
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
 (autoload 'caml-types-show-type "caml-types" "Show type of expression / pattern at point." t)
-
-(defun ocaml-comment-heading ()
-  (interactive)
-  (comment-heading "(*" "*)" ?*))
 
 (add-hook 'tuareg-mode-hook '(lambda ()
   (global-set-key (kbd "C-c C-t") 'caml-types-show-type)))
 
-(add-hook 'tuareg-mode-hook
-  (lambda ()
-    (define-key tuareg-mode-map (kbd "C-c a") 'ocaml-comment-heading)))
+(add-hook 'tuareg-mode-hook 'merlin-mode)
 
 (setq tuareg-in-indent 2)
+(setq tuareg-match-clause-indent 2)
 
 ;;;; Latex
 (setq TeX-PDF-mode t)
