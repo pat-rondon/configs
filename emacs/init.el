@@ -100,7 +100,7 @@
       (set-scroll-bar-mode nil)
       (set-fringe-mode 4)
       (defvar pmr-frame-font)
-      (setq pmr-frame-font "Droid Sans Mono-12")
+      (setq pmr-frame-font "JetBrains Mono-12")
       (set-frame-font pmr-frame-font)
       (set-face-attribute 'default nil :font pmr-frame-font)))
 
