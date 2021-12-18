@@ -6,6 +6,9 @@
 '(font-lock-comment-face ((t (:foreground "#4a0000" :weight normal ))))
 '(compilation-error ((t (:foreground "#4a0000" ))))
 '(compilation-info ((t (:foreground "#00004a" ))))
+'(company-tooltip-common ((t (:weight bold ))))
+'(company-tooltip-selection ((t (:background "#4a4a4a" :weight bold
+                                 :foreground "#ffffff" ))))
 '(font-lock-constant-face ((t (:foreground "#000000" :weight normal ))))
 '(cursor ((t (:foreground "#000000" ))))
 '(font-lock-doc-face ((t (:foreground "#4a0000" :weight normal ))))
@@ -27,6 +30,7 @@
 '(minibuffer-prompt ((t (:foreground "#4a4a4a" :weight semi-bold ))))
 '(region ((t (:background "#eaeaea" ))))
 '(font-lock-string-face ((t (:foreground "#4a0000" :weight normal ))))
+'(company-tooltip ((t (:background "#eaeaea" ))))
 '(tuareg-font-lock-governing-face ((t (:foreground "#4a4a4a"
                                        :weight semi-bold ))))
 '(tuareg-font-lock-operator-face ((t (:foreground "#000000" :weight normal ))))
