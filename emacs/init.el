@@ -49,7 +49,7 @@
 ;; Keybindings
 (bind-key "C-x C-f" 'counsel-find-file)
 (bind-key "C-c r" 'reload-this-file)
-(bind-key "C-c /" 'lgrep)
+(bind-key "C-c /" 'projectile-ripgrep)
 (bind-key "C-c c" 'compile)
 (bind-key "C-c g" 'magit-status)
 
